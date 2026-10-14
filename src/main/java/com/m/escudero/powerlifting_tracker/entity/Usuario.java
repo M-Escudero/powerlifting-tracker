@@ -1,9 +1,8 @@
 package com.m.escudero.powerlifting_tracker.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -13,4 +12,7 @@ public class Usuario {
     private Long id;
     private String nombre;
     private String email;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Entrenamiento> entrenamientos;
 }
