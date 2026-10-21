@@ -2,6 +2,7 @@ package com.m.escudero.powerlifting_tracker.controller;
 
 import com.m.escudero.powerlifting_tracker.entity.Entrenamiento;
 import com.m.escudero.powerlifting_tracker.service.EntrenamientoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class EntrenamientoController {
     }
 
     @PostMapping
-    public Entrenamiento crear(@RequestBody Entrenamiento entrenamiento, @RequestParam Long usuarioId){
+    public Entrenamiento crear(@Valid @RequestBody Entrenamiento entrenamiento, @RequestParam Long usuarioId){
         return entrenamientoService.crear(usuarioId, entrenamiento);
     }
 

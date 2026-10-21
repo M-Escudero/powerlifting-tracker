@@ -2,7 +2,7 @@ package com.m.escudero.powerlifting_tracker.controller;
 
 import com.m.escudero.powerlifting_tracker.entity.Usuario;
 import com.m.escudero.powerlifting_tracker.service.UsuarioService;
-import jakarta.persistence.Id;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario crear (@RequestBody Usuario usuario){
+    public Usuario crear (@Valid @RequestBody Usuario usuario){
         return usuarioService.crear(usuario);
     }
 
