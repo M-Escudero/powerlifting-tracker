@@ -13,9 +13,9 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UsuarioNoEncontradoException.class)
+    @ExceptionHandler(RecursoNoEncontradoException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> manejarUsuarioNoEncontrado(UsuarioNoEncontradoException ex){
+    public Map<String, String> manejarRecursoNoEncontrado(RecursoNoEncontradoException ex){
         return Map.of("mensaje", ex.getMessage() );
     }
 
