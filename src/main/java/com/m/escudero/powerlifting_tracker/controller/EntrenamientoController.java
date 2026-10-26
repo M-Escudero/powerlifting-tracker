@@ -26,4 +26,14 @@ public class EntrenamientoController {
     public List<Entrenamiento> listar(){
         return entrenamientoService.listar();
     }
+
+    @GetMapping("/{id}")
+    public Entrenamiento buscarPorId(@PathVariable Long id){
+        return entrenamientoService.buscarPorId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id){
+        entrenamientoService.eliminar(id);
+    }
 }
